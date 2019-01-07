@@ -1,6 +1,6 @@
 // @flow
 
-const BASE_URL = 'http://10.12.52.48:3000/';
+const BASE_URL = 'http://127.0.0.1:3000/';
 
 const FILEPOST = (filePath) => {
   // eslint-disable-next-line no-undef
@@ -44,125 +44,18 @@ const POST = (url, params) => {
   /* eslint-enable no-undef */
 };
 
-
-const upload = (filePath: string) => {
-  const request = FILEPOST(filePath);
-  return request;
-};
-
 type getVerifyCodeParamsType = {
   mobile: string;
 }
 const getVerifyCode = (params: getVerifyCodeParamsType) => {
-  const request = POST('users', {
-    action: 'getVerifyCode',
+  const request = POST('xxx', {
+    action: 'xxxx',
     data: params,
   });
   return request;
 };
 
-type chekVerifyCodeParamsType = {
-  mobile: string,
-  code: string,
-}
-const chekVerifyCode = (params: chekVerifyCodeParamsType) => {
-  const request = POST('users', {
-    action: 'checkVerifyCode',
-    data: params,
-  });
-  return request;
-};
-
-type loginParamsType = {
-  mobile: string,
-  token: string,
-}
-const login = (params: loginParamsType) => {
-  const request = POST('users', {
-    action: 'login',
-    data: params,
-  });
-  return request;
-};
-
-type registerParamsType = {
-  mobile: string,
-}
-const register = (params: registerParamsType) => {
-  const request = POST('users', {
-    action: 'register',
-    data: params,
-  });
-  return request;
-};
-
-type getTokenByMobileParamsType = {
-  mobile: string,
-}
-const getTokenByMobile = (params: getTokenByMobileParamsType) => {
-  const request = POST('users', {
-    action: 'getTokenByMobile',
-    data: params,
-  });
-  return request;
-};
-
-type modifyUserInfoParamsType = {
-  nickName: string,
-  gender: number,
-  icon: string,
-}
-const modifyUserInfo = (params: modifyUserInfoParamsType) => {
-  const request = POST('users', {
-    action: 'modifyUserInfo',
-    data: params,
-  });
-  return request;
-};
-
-
-const getAllGame = () => {
-  const request = POST('game', {
-    action: 'getAllGame',
-    data: {},
-  });
-  return request;
-};
-
-type addGameToAccidParamsType = {
-  accid: string,
-  gameId: number,
-  sortId: number,
-}
-const addGameToAccid = (params: addGameToAccidParamsType) => {
-  const request = POST('game', {
-    action: 'addGameToAccid',
-    data: params,
-  });
-  return request;
-};
-
-
-type getCurrentRecommandsParamsType = {
-  accid: string,
-}
-const getCurrentRecommands = (params: getCurrentRecommandsParamsType) => {
-  const request = POST('recommand', {
-    action: 'getCurrentRecommands',
-    data: params,
-  });
-  return request;
-};
 
 export default {
   getVerifyCode,
-  chekVerifyCode,
-  login,
-  getTokenByMobile,
-  register,
-  upload,
-  modifyUserInfo,
-  getAllGame,
-  addGameToAccid,
-  getCurrentRecommands,
 };

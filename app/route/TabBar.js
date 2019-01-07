@@ -10,7 +10,7 @@ import IMG from '../img';
 
 
 import HomePageContainer from '../module/homePage';
-import ChatContainer from '../module/chat';
+import MineContainer from '../module/mine';
 import DiscoverContainer from '../module/discover';
 
 const TabOptions = (tabBarTitle, normalImage, selectedImage, index) => {
@@ -55,8 +55,8 @@ const TabBar = createBottomTabNavigator({
       1,
     ),
   },
-  Chat: {
-    screen: ChatContainer,
+  Mine: {
+    screen: MineContainer,
     navigationOptions: () => TabOptions(
       ' ',
       IMG.chatNor,

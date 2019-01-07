@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { ANNOTATION_TYPE } from 'const';
 import REQUEST from 'netrequest';
 import HomePageScene from './scenes/HomePageScene';
-import type { PersonCardType } from './scenes/PersonCarScene';
 
 
 type props = {
@@ -14,39 +13,24 @@ type props = {
 }
 
 type stateType = {
-  dataArray: Array<PersonCardType>,
-  userIcons: Array<string>,
 }
 
 class HomePageContainer extends React.Component <props, stateType> {
-  state = {
-    newRecommandUsers: [],
-    newRecommandUserIcons: [],
-  }
-
   componentDidMount() {
-    REQUEST.getCurrentRecommands({
-      accid: this.props.user.accid,
-    }).then(({ newRecommandUsers, newRecommandUserIcons }) => {
-      this.setState({ newRecommandUsers, newRecommandUserIcons });
-    });
+    
   }
 
   render() {
     return (
-      <HomePageScene
-        icon={this.props.user.icon}
-        newRecommandUsers={this.state.newRecommandUsers}
-        newRecommandUserIcons={this.state.newRecommandUserIcons}
-      />
+      <HomePageScene />
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const { user } = state;
+  const { homepage } = state;
   return {
-    user,
+    homepage,
   };
 };
 

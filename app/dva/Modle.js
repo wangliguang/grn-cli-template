@@ -1,9 +1,9 @@
 // @flow
 
-import userModel from '../module/login/modles/userModle';
+import HomePageModle from '../module/homepage/modles/HomePageModle';
 
 const registerModel = (app: any) => {
-  app.model(userModel);
+  app.model(HomePageModle);
 };
 
 export default registerModel;
